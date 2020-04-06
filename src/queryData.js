@@ -1,14 +1,14 @@
 const depMapCNVQuery = geneId => ({
 	from: 'Gene',
 	select: [
-		'Gene.depMapCopyNumber.depMapID.DepMapID',
-		'Gene.depMapCopyNumber.depMapID.Lineage',
-		'Gene.depMapCopyNumber.depMapID.Disease',
-		'Gene.depMapCopyNumber.value'
+		'depMapCopyNumber.depMapID.DepMapID',
+		'depMapCopyNumber.depMapID.Lineage',
+		'depMapCopyNumber.depMapID.Disease',
+		'depMapCopyNumber.DepmapCnvValue'
 	],
 	orderBy: [
 		{
-			path: 'Gene.depMapCopyNumber.depMapID.Disease',
+			path: 'depMapCopyNumber.depMapID.Disease',
 			direction: 'ASC'
 		}
 	],
