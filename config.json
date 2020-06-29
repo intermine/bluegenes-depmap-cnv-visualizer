@@ -1,5 +1,5 @@
 {
-  "accepts": ["id","ids"]  ,
+  "accepts": ["id"]  ,
   "classes":
     ["Gene"]
   ,
@@ -18,5 +18,6 @@
   "toolName" : {
     "human" :"Bluegenes DepMap CNV",
     "cljs" :"bluegenesDepMapCnv"    
-  }
+  },
+  "version": 2
 }

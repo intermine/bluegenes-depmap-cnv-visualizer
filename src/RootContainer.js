@@ -22,19 +22,21 @@ class RootContainer extends React.Component {
 
 		queryData(value, serviceUrl)
 			.then(res => {
-				const map = {};
-				res.depMapCnv.forEach(r => {
+				const mapData = {};
+				res.depMapCopyNumber.forEach(r => {
 
-					if(r.depMapID.Disease != null) {
-						const cellLinesData = map[r.depMapID.Disease] || [];
-						cellLinesData.push({cellLine: r.depMapID.DepMapID, cnv: r.DepmapCnvValue});
-						map[r.depMapID.Disease] = cellLinesData;
+					if(r.cellLine.Disease != null) {
+						const cellLinesData = mapData[r.cellLine.Disease] || [];
+						cellLinesData.push({cellLine: r.cellLine.DepMapID, cnv: r.DepmapCnvValue});
+						mapData[r.cellLine.Disease] = cellLinesData;
 					}
 				});
 
-				this.setState({ loading: false, data: map });
+				this.setState({ loading: false, data: mapData });
 			})
-			.catch(error => this.setState({ error }));
+			.catch(error => {
+				this.setState({ error });
+			});
 	}
 
 	render() {

@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    library: "bluegenesDepMapExpression",
+    library: "bluegenesDepMapCnv",
     libraryTarget: "var"
   },
   optimization: {
